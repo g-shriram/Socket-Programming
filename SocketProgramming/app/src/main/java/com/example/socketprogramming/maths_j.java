@@ -199,11 +199,16 @@ public class maths_j extends AppCompatActivity {
                     }
 
                     if (reading.equals("win")) {
+
                         count2++;
                         player2.setProgress(count2*10);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                for (int i = 0; i < 4; i++) {
+                                    op[i].setVisibility(View.INVISIBLE);
+                                }
+
                                 textTimer.setText("You Lose !");
                                 check();
                             }
@@ -211,11 +216,16 @@ public class maths_j extends AppCompatActivity {
 
                     }
                     if (reading.equals("lose")) {
+
+
                         count1++;
                         player1.setProgress(count1*10);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                for (int i = 0; i < 4; i++) {
+                                    op[i].setVisibility(View.INVISIBLE);
+                                }
                                 textTimer.setText("You Win !");
                                 check();
                             }
